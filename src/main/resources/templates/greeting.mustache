@@ -1,0 +1,107 @@
+<html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="expires" content="Mon, 14 Jan 19 00:00:00 +0100" />
+    <meta http-equiv="refresh" content="523266" />
+    <meta name="description" content="parzysty, czy nieparzysty? sklepy otwarte w niedzielę?" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon-p.ico"/>
+    <title>jaki tydzień? sprawdź parzystość tygodnia i handlowość niedzieli!</title>
+    <style type="text/css" media="screen, projection">
+    body {
+     font-family: Helvetica, Arial, sans-serif;
+     color: #000;
+    }
+    h1 {
+     font-size: 7em;
+     font-weight: 800;
+     text-transform: uppercase;
+     letter-spacing: -0.02em;
+     padding-top: 0.5em;
+     text-align: center;
+      color: #6F0;
+     /*white-space: nowrap;*/
+    }
+    h3 {
+     font-size: 5em;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: -0.02em;
+     padding-top: 0.5em;
+     text-align: center;
+     /*white-space: nowrap;*/
+    }
+    h1 .ocd {
+     margin-left: -0.08em;
+    }
+    .weekend {
+     text-align: center;
+     margin-top: -0.2em;
+     line-height: 110%;
+     font-size: smaller;
+    }
+    .what {
+     color: #999;
+     margin-top: -0.2em;
+     line-height: 40%;
+     font-size: 0.4em;
+     text-align: left;
+    }
+    .current {
+     color: #000;
+    }
+    .details {
+     font-size: 0.2em;
+     letter-spacing: -0.03em;
+     text-align: center;
+     margin-top: -0.2em;
+    }
+    ul {
+     margin: 36px 0;
+     min-height: 30px;
+     padding: 5px 20px;
+     list-style: none;
+     text-align: center;
+    }
+    h1 a, ul a {
+     color: #01C;
+     text-decoration: none;
+    }
+    h1 a:hover, ul a:hover {
+     color: #005580;
+     text-decoration: underline;
+    }
+    ul:first-child { min-height: 0 }
+    ul li {
+     display: inline;
+     margin: 0 8px;
+     color: #999;
+    }
+</style>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3652934-7']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+</head>
+<body>
+<div>
+    <form method="get">
+        <input type="number" name="value" placeholder="Wprowadż numer tygodnia" />
+        <button type="submit"> Sprawdż tydzień</button>
+    </form>
+</div>
+<h1>
+    {{pairWeek}}    </h1>
+<h3>
+    {{whatWeek}}    </h3>
+
+</body>
+</html>
