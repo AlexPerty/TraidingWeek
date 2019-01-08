@@ -18,14 +18,10 @@ import java.util.List;
 
 @Controller
 public class WeekController {
-
-  public static boolean countingWeek(Integer weekNr) {
-    List<Integer> allowedTradingWeeks = Arrays.asList(4,8,13,15,17,21,26,30,34,39,43,47,50,51,52);
-    if (allowedTradingWeeks.contains(weekNr)) {
-      return true;
-    } else {
-      return false;
-    }
+  private static final List<Integer> allowedTradingWeeks = Arrays.asList(4,8,13,15,17,21,26,30,34,39,43,47,50,51,52);
+  
+  public static boolean countingWeek(Integer weekNr) {    
+    return allowedTradingWeeks.contains(weekNr);
   }
   public static boolean pairWeek(Integer weekNr) {
     return weekNr % 2 == 0;
@@ -34,21 +30,15 @@ public class WeekController {
   @GetMapping("/")
   private ModelAndView greeting(@RequestParam(value = "value", required = false) Integer value) {
     ModelAndView modelAndView = new ModelAndView("greeting");
+    
     if (value == null) {
       ZonedDateTime now = ZonedDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
       value = now.get(IsoFields.WEEK_OF_WEEK_BASED_YEAR);
     }
-      if (countingWeek(value)) {
-        modelAndView.addObject("whatWeek", "niedziela handlowa");
-      } else {
-        modelAndView.addObject("whatWeek", "niedziela niehandlowa");
-      }
-    if (pairWeek(value)){
-      modelAndView.addObject("pairWeek", "niedziela parzysta");
-    }
-    else {
-      modelAndView.addObject("pairWeek", "niedziela nie parzysta");
-    }
+    
+    modelAndView.addObject("whatWeek", countingWeek(value) ? "niedziela handlowa" : "niedziela niehandlowa");
+    modelAndView.addObject("pairWeek", pairWeek(value) ? "niedziela parzysta" : "niedziela nie parzysta");
+    
     return modelAndView;
   }
 
